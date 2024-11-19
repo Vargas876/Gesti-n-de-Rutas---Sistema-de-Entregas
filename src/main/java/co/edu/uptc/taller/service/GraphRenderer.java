@@ -14,7 +14,6 @@ import javafx.scene.web.WebView;
  * Servicio encargado de renderizar el grafo en un WebView.
  */
 public class GraphRenderer {
-
     private static final Logger logger = Logger.getLogger(GraphRenderer.class.getName());
     private static final double AVERAGE_SPEED_KMH = 60.0; // Debe coincidir con RouteService
 
