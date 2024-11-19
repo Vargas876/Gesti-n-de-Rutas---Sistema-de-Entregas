@@ -136,17 +136,17 @@ public class GraphRenderer {
         }
         int centerX = 400;
         int centerY = 300;
-        int radius = 250; // Aumentar el radio para acomodar más nodos
-        double angleStep = 2 * Math.PI / (size > 0 ? size : 1); // Evitar división por cero
+        int radius = 250;
+        double angleStep = 2 * Math.PI / (size > 0 ? size : 1);
 
-        // Asignar posiciones
+
         double[][] positionsArr = new double[size][2];
         for (int i = 0; i < size; i++) {
             positionsArr[i][0] = centerX + radius * Math.cos(i * angleStep);
             positionsArr[i][1] = centerY + radius * Math.sin(i * angleStep);
         }
 
-        // Dibujar aristas
+
         for (DefaultWeightedEdge edge : deliveryGraph.getGraph().edgeSet()) {
             Location source = deliveryGraph.getGraph().getEdgeSource(edge);
             Location target = deliveryGraph.getGraph().getEdgeTarget(edge);
@@ -167,7 +167,7 @@ public class GraphRenderer {
             double cost = distance * 1500;
             double time = distance / AVERAGE_SPEED_KMH; // Cálculo del tiempo
 
-            // Añadir una línea para la arista con atributos de datos para tooltips
+
             html.append("<line x1='").append(x1).append("' y1='").append(y1)
                     .append("' x2='").append(x2).append("' y2='").append(y2)
                     .append("' class='").append(className).append("' ")
@@ -175,7 +175,7 @@ public class GraphRenderer {
                     .append("data-cost='").append(cost).append("' ")
                     .append("data-time='").append(String.format("%.2f", time)).append("' />");
 
-            // Añadir etiquetas para distancia
+
             double midX = (x1 + x2) / 2;
             double midY = (y1 + y2) / 2;
             html.append("<text x='").append(midX + 5).append("' y='").append(midY - 5)
@@ -183,14 +183,10 @@ public class GraphRenderer {
                     .append(String.format("%.1f km", distance))
                     .append("</text>");
 
-            // Opcional: Añadir etiquetas para tiempo
-            html.append("<text x='").append(midX + 5).append("' y='").append(midY + 15)
-                    .append("' class='distance-label'>")
-                    .append(String.format("%.2f h", time))
-                    .append("</text>");
+
         }
 
-        // Dibujar nodos
+
         for (int i = 0; i < locations.size(); i++) {
             double x = positionsArr[i][0];
             double y = positionsArr[i][1];
@@ -203,7 +199,7 @@ public class GraphRenderer {
 
         html.append("</svg></body></html>");
 
-        // Cargar el HTML en el WebView
+
         webView.getEngine().loadContent(html.toString());
         logger.info("Grafo renderizado exitosamente en WebView.");
     }

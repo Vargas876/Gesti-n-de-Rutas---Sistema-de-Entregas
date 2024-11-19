@@ -67,7 +67,7 @@ public class RouteService {
             sb.append(loc.getName()).append(" -> ");
         }
         if (sb.length() >= 4) {
-            sb.setLength(sb.length() - 4); // Eliminar la última flecha
+            sb.setLength(sb.length() - 4);
         }
         return sb.toString();
     }
@@ -96,7 +96,7 @@ public class RouteService {
             this.time = time;
         }
 
-        // Getters
+
 
         public List<Location> getPath() {
             return path;
