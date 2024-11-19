@@ -28,7 +28,6 @@ public class GraphRenderer {
     public GraphRenderer(DeliveryGraph deliveryGraph) {
         this.deliveryGraph = deliveryGraph;
     }
-
     /**
      * Renderiza el grafo en el WebView proporcionado.
      *
