@@ -67,8 +67,8 @@ IntelliJ IDEA, Eclipse o NetBeans, con soporte para JavaFX
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/Vargas876/Gestion-de-Rutas---Sistema-de-Entregas.git
+cd Gestion-de-Rutas---Sistema-de-Entregas
 ```
 
 ### 2. Configuración de Dependencias
