@@ -15,7 +15,7 @@ import javafx.scene.web.WebView;
  */
 public class GraphRenderer {
     private static final Logger logger = Logger.getLogger(GraphRenderer.class.getName());
-    private static final double AVERAGE_SPEED_KMH = 60.0; // Debe coincidir con RouteService
+    private static final double AVERAGE_SPEED_KMH = 60.0;
 
     private DeliveryGraph deliveryGraph;
 
@@ -55,7 +55,6 @@ public class GraphRenderer {
                 .append("    pointer-events: none;")
                 .append("}")
                 .append("</style>")
-                // Scripts para zoom, pan y tooltips
                 .append("<script>")
                 .append("var svg = null;")
                 .append("var tooltip = null;")
@@ -126,7 +125,7 @@ public class GraphRenderer {
                 .append("</head><body onload='init(event)'>")
                 .append("<svg width='800' height='600' viewBox='0 0 800 600'>");
 
-        // Obtener ubicaciones del grafo
+
         List<Location> locations = new ArrayList<>(deliveryGraph.getGraph().vertexSet());
         int size = locations.size();
         if (size == 0) {
